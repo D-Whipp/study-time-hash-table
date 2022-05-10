@@ -15,7 +15,7 @@ class HashTable {
   numItems = 0;
 
   resize = () => {
-    const newTable = new Array(table.length * 2);
+    const newTable = new Array(this.table.length * 2);
     this.table.forEach((item) => {
       if (item) {
         item.forEach(([key, value]) => {
@@ -58,9 +58,13 @@ class HashTable {
 
 const myTable = new HashTable();
 myTable.setItem('firstName', 'bob');
+console.log(myTable.table.length);
 myTable.setItem('lastName', 'ross');
+console.log(myTable.table.length);
+
 myTable.setItem('age', 5);
 myTable.setItem('dob', '1/2/3');
+console.log(myTable.table.length);
 myTable.getItem('firstName');
 
 console.log(myTable.table.length);
@@ -68,3 +72,4 @@ console.log(myTable.getItem('firstName'));
 console.log(myTable.getItem('lastName'));
 console.log(myTable.getItem('age'));
 console.log(myTable.getItem('dob'));
+console.log(myTable.table.length);
